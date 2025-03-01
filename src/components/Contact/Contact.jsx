@@ -66,7 +66,9 @@ const Contact = () => {
 
   return (
     <div className="text-white bg-gray-800 flex flex-col justify-center items-center lg:mx-auto p-40 ">
-      <h2 className="text-3xl font-semibold text-center mb-6">Contact Me</h2>
+      <h2 className="w-70 text-3xl font-semibold text-center mb-6">
+        Contact Me
+      </h2>
 
       {submitted && (
         <div className="text-blue-500 text-center mb-4">
@@ -74,7 +76,7 @@ const Contact = () => {
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="w-200 space-y-6">
+      <form onSubmit={handleSubmit} className="w-75 space-y-6 lg:w-200">
         {/* Name Field */}
         <div>
           <label htmlFor="name" className="block text-lg font-medium">
