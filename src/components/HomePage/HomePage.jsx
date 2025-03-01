@@ -18,7 +18,7 @@ const HomePage = () => {
   });
 
   return (
-    <div className="bg-gray-800 text-white font-sans">
+    <div className="bg-linear-to-r from-cyan-600 to-blue-500 text-white font-sans">
       <section
         className="relative flex items-center justify-between lg:h-screen bg-cover bg-center"
         style={{
@@ -54,7 +54,7 @@ const HomePage = () => {
               <img
                 src={imgUrl}
                 alt="Profile Picture"
-                className="rounded-full shadow-xl max-w-full h-auto animate__animated animate__fadeIn animate__delay-2s"
+                className="rounded-full shadow-xl shadow-gray-900 max-w-full h-auto animate__animated animate__fadeIn animate__delay-2s"
               />
             ) : (
               "Loading Profile Picture..."

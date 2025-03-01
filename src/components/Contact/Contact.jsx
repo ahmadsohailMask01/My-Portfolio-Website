@@ -65,10 +65,8 @@ const Contact = () => {
   };
 
   return (
-    <div className="max-w-screen-lg lg:mx-auto p-20 mt-20 ">
-      <h2 className="text-3xl font-semibold text-center text-gray-900 mb-6">
-        Contact Me
-      </h2>
+    <div className="text-white bg-gray-800 flex flex-col justify-center items-center lg:mx-auto p-40 ">
+      <h2 className="text-3xl font-semibold text-center mb-6">Contact Me</h2>
 
       {submitted && (
         <div className="text-blue-500 text-center mb-4">
@@ -76,13 +74,10 @@ const Contact = () => {
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form onSubmit={handleSubmit} className="w-200 space-y-6">
         {/* Name Field */}
         <div>
-          <label
-            htmlFor="name"
-            className="block text-lg font-medium text-gray-700"
-          >
+          <label htmlFor="name" className="block text-lg font-medium">
             Name
           </label>
           <input
@@ -99,10 +94,7 @@ const Contact = () => {
 
         {/* Email Field */}
         <div>
-          <label
-            htmlFor="email"
-            className="block text-lg font-medium text-gray-700"
-          >
+          <label htmlFor="email" className="block text-lg font-medium">
             Email
           </label>
           <input
@@ -121,10 +113,7 @@ const Contact = () => {
 
         {/* Message Field */}
         <div>
-          <label
-            htmlFor="message"
-            className="block text-lg font-medium text-gray-700"
-          >
+          <label htmlFor="message" className="block text-lg font-medium">
             Message
           </label>
           <textarea
@@ -145,7 +134,7 @@ const Contact = () => {
         <div>
           <button
             type="submit"
-            className="w-full py-3 mt-4 cursor-pointer bg-gray-700 text-white font-semibold rounded-md hover:bg-gray-800 transition duration-300 focus:outline-none"
+            className="w-full py-3 mt-4 cursor-pointer bg-gray-700 text-white font-semibold rounded-md hover:bg-gray-900 transition duration-300 focus:outline-none"
           >
             Send Message
           </button>

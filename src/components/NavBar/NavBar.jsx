@@ -19,7 +19,7 @@ const Navbar = () => {
       <div className="max-w-screen-xl mx-auto px-4 py-5 flex items-center justify-between">
         <div className="text-white text-3xl font-bold">
           <NavLink
-            to="#"
+            to="/"
             className="hover:text-blue-500 transition duration-300"
           >
             <img src="/assets/Logo.png" className="w-40 h-20 rounded-md" />
