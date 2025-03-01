@@ -1,10 +1,21 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
+import React from "react";
+import { useInView } from "react-intersection-observer";
 import "animate.css";
 import useGithubInfo from "../../hooks/useGithubInfo";
+
 const HomePage = () => {
   const data = useGithubInfo();
   const imgUrl = data.avatar_url;
+
+  const { ref: projectTextRef, inView: projectTextInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.5, // Trigger when the element is 50% in the viewport
+  });
+
+  const { ref: projectButtonRef, inView: projectButtonInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
 
   return (
     <div className="bg-gray-800 text-white font-sans">
@@ -81,16 +92,24 @@ const HomePage = () => {
 
       {/* Call to Action Section */}
       <section className="py-20 bg-blue-600 text-center">
-        <h2 className="text-3xl text-white mb-4">
+        <h2
+          ref={projectTextRef}
+          className={`text-3xl text-white mb-4 transition-transform duration-500 ${
+            projectTextInView ? "animate__animated animate__slideInLeft" : ""
+          }`}
+        >
           You can checkout my projects on Github!
         </h2>
         <button
+          ref={projectButtonRef}
           onClick={() => {
             window.open(
               "https://github.com/ahmadsohailMask01?tab=repositories"
             );
           }}
-          className="cursor-pointer mt-6 px-6 py-3 bg-white text-blue-600 rounded-full text-xl transform hover:scale-110 transition-all"
+          className={`cursor-pointer mt-6 px-6 py-3 bg-white text-blue-600 rounded-full text-xl transform hover:scale-110 transition-all ${
+            projectButtonInView ? "animate__animated animate__slideInLeft" : ""
+          }`}
         >
           Visit Projects
         </button>

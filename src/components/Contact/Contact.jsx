@@ -65,7 +65,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="max-w-screen-lg mx-auto p-20 mt-20">
+    <div className="max-w-screen-lg lg:mx-auto p-20 mt-20 ">
       <h2 className="text-3xl font-semibold text-center text-gray-900 mb-6">
         Contact Me
       </h2>
@@ -145,7 +145,7 @@ const Contact = () => {
         <div>
           <button
             type="submit"
-            className="w-full py-3 mt-4 bg-gray-700 text-white font-semibold rounded-md hover:bg-gray-800 transition duration-300 focus:outline-none"
+            className="w-full py-3 mt-4 cursor-pointer bg-gray-700 text-white font-semibold rounded-md hover:bg-gray-800 transition duration-300 focus:outline-none"
           >
             Send Message
           </button>

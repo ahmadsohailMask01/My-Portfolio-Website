@@ -9,8 +9,13 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
+  // Close the menu after navigating to a link
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  };
+
   return (
-    <nav className="bg-[rgba(17,24,39,0.5)] shadow-lg fixed w-full z-100 top-0 left-0 ">
+    <nav className="bg-[rgba(17,24,39,0.5)] shadow-lg fixed w-full z-100 top-0 left-0">
       <div className="max-w-screen-xl mx-auto px-4 py-5 flex items-center justify-between">
         <div className="text-white text-3xl font-bold">
           <NavLink
@@ -72,35 +77,50 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div
         className={`md:hidden bg-gray-800 ${
-          isOpen ? "block" : "hidden"
+          isOpen
+            ? "block animate__animated animate__fadeIn animate__faster"
+            : "hidden animate__animated animate__fadeOut animate__faster"
         } transition-all duration-300 ease-in-out`}
       >
-        <a
-          href="#home"
-          className="block text-white text-lg py-3 px-4 hover:text-blue-500 transition duration-300"
+        <NavLink
+          to="/"
+          onClick={handleLinkClick}
+          className={({ isActive }) => {
+            return `block ${
+              isActive ? "text-orange-700" : "text-white"
+            } text-lg py-3 px-4 hover:text-blue-500 transition duration-300`;
+          }}
         >
           Home
-        </a>
-        <a
-          href="#features"
-          className="block text-white text-lg py-3 px-4 hover:text-blue-500 transition duration-300"
+        </NavLink>
+        <NavLink
+          to="/contact"
+          onClick={handleLinkClick}
+          className={({ isActive }) => {
+            return `block ${
+              isActive ? "text-orange-700" : "text-white"
+            } text-lg py-3 px-4 hover:text-blue-500 transition duration-300`;
+          }}
         >
-          Features
-        </a>
+          Contact
+        </NavLink>
         <a
           href="#services"
+          onClick={handleLinkClick}
           className="block text-white text-lg py-3 px-4 hover:text-blue-500 transition duration-300"
         >
           Services
         </a>
         <a
           href="#about"
+          onClick={handleLinkClick}
           className="block text-white text-lg py-3 px-4 hover:text-blue-500 transition duration-300"
         >
           About
         </a>
         <a
           href="#contact"
+          onClick={handleLinkClick}
           className="block text-white text-lg py-3 px-4 hover:text-blue-500 transition duration-300"
         >
           Contact

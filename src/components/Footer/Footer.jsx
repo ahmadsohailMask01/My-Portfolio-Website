@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -9,7 +10,7 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <img src="/assets/Logo.png" className="w-40 h-20 mb-5 rounded-md" />
-            <p className="text-lg">
+            <p className="text-lg text-justify">
               We provide the best web development services to help your business
               grow online. Join us to take your business to the next level.
             </p>
@@ -20,20 +21,28 @@ const Footer = () => {
             <h4 className="text-xl font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <a
-                  href="#home"
-                  className="hover:text-blue-500 transition duration-300"
+                <NavLink
+                  to="/"
+                  className={({ isActive }) => {
+                    return `${
+                      isActive ? "text-orange-700" : "text-white"
+                    } hover:text-blue-500 transition duration-300`;
+                  }}
                 >
                   Home
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="#features"
-                  className="hover:text-blue-500 transition duration-300"
+                <NavLink
+                  to="/contact"
+                  className={({ isActive }) => {
+                    return `${
+                      isActive ? "text-orange-700" : "text-white"
+                    } hover:text-blue-500 transition duration-300`;
+                  }}
                 >
-                  Features
-                </a>
+                  Contact
+                </NavLink>
               </li>
               <li>
                 <a
@@ -136,7 +145,7 @@ const Footer = () => {
         {/* Footer Bottom Section */}
         <div className="border-t border-gray-700 mt-10 pt-6 text-center">
           <p className="text-sm text-gray-400">
-            © {new Date().getFullYear()} MyWebsite. All rights reserved.
+            © {new Date().getFullYear()} MASK Development. All rights reserved.
           </p>
         </div>
       </div>
