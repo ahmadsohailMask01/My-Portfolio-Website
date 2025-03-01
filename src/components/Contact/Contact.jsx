@@ -65,7 +65,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="max-w-screen-lg mx-auto p-6 mt-20">
+    <div className="max-w-screen-lg mx-auto p-20 mt-20">
       <h2 className="text-3xl font-semibold text-center text-gray-900 mb-6">
         Contact Me
       </h2>
