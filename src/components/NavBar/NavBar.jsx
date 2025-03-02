@@ -104,6 +104,17 @@ const Navbar = () => {
           Home
         </NavLink>
         <NavLink
+          to="/about"
+          onClick={handleLinkClick}
+          className={({ isActive }) => {
+            return `block ${
+              isActive ? "text-orange-700" : "text-white"
+            } text-lg py-3 px-4 hover:text-blue-500 transition duration-300`;
+          }}
+        >
+          About
+        </NavLink>
+        <NavLink
           to="/contact"
           onClick={handleLinkClick}
           className={({ isActive }) => {
@@ -114,27 +125,6 @@ const Navbar = () => {
         >
           Contact
         </NavLink>
-        <a
-          href="#services"
-          onClick={handleLinkClick}
-          className="block text-white text-lg py-3 px-4 hover:text-blue-500 transition duration-300"
-        >
-          Services
-        </a>
-        <a
-          href="#about"
-          onClick={handleLinkClick}
-          className="block text-white text-lg py-3 px-4 hover:text-blue-500 transition duration-300"
-        >
-          About
-        </a>
-        <a
-          href="#contact"
-          onClick={handleLinkClick}
-          className="block text-white text-lg py-3 px-4 hover:text-blue-500 transition duration-300"
-        >
-          Contact
-        </a>
       </div>
     </nav>
   );
