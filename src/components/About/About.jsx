@@ -50,7 +50,7 @@ const About = () => {
                 Let's Collaborate!
               </button>
             }
-            position="right center"
+            position="bottom center"
           >
             <div className="flex flex-col text-center">
               <span>Here's my Whatsapp Number!</span>{" "}
