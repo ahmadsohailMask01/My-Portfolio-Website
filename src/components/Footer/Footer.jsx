@@ -11,7 +11,7 @@ const Footer = () => {
           <div>
             <img src="/assets/Logo.png" className="w-40 h-20 mb-5 rounded-md" />
             <p className="text-lg text-justify">
-              We provide the best web development services to help your business
+              I provide the best web development services to help your business
               grow online. Join us to take your business to the next level.
             </p>
           </div>
@@ -34,6 +34,18 @@ const Footer = () => {
               </li>
               <li>
                 <NavLink
+                  to="/about"
+                  className={({ isActive }) => {
+                    return `${
+                      isActive ? "text-orange-700" : "text-white"
+                    } hover:text-blue-500 transition duration-300`;
+                  }}
+                >
+                  About
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
                   to="/contact"
                   className={({ isActive }) => {
                     return `${
@@ -44,30 +56,6 @@ const Footer = () => {
                   Contact
                 </NavLink>
               </li>
-              <li>
-                <a
-                  href="#services"
-                  className="hover:text-blue-500 transition duration-300"
-                >
-                  Services
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#about"
-                  className="hover:text-blue-500 transition duration-300"
-                >
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#contact"
-                  className="hover:text-blue-500 transition duration-300"
-                >
-                  Contact
-                </a>
-              </li>
             </ul>
           </div>
 
@@ -76,7 +64,7 @@ const Footer = () => {
             <h4 className="text-xl font-semibold mb-4">Follow Us</h4>
             <div className="flex space-x-6">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/ahmad.sohail.16547"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white hover:text-blue-500 transition duration-300"
@@ -118,7 +106,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/m-ahmad-sohail-523653252/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white hover:text-blue-500 transition duration-300"

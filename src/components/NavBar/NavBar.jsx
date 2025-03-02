@@ -39,6 +39,16 @@ const Navbar = () => {
             Home
           </NavLink>
           <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              `${
+                isActive ? "text-orange-700" : "text-white"
+              } text-lg text-bold hover:text-blue-500 transition duration-300 text-bold`
+            }
+          >
+            About
+          </NavLink>
+          <NavLink
             to="/contact"
             className={({ isActive }) =>
               `${
